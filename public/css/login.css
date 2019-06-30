@@ -1,0 +1,58 @@
+.login{
+    width: 50vh;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid;
+    border-color:black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.login > h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.login > h4{
+    color: red;
+}
+
+.email, .senha{
+    width: 100%;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.senha:hover, .email:hover{
+    border-color: cornflowerblue;
+}
+
+.senha:active, .email:active{
+    border-color: cornflowerblue;
+}
+
+.btLogin{
+    width: 100%;
+    border-width: 0px;
+    background-color: darkgray;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.criaPost{
+    position: relative;
+}
+
+.texto{
+    width: 100%;
+    height: 30vh;
+}

@@ -1,0 +1,29 @@
+@layout('layouts.app')
+ 
+@section('content')
+<!-- Page Header -->
+<div class="login">
+    <h1>Registrar</h1>
+    <form action="/users/register" method="POST" encType="multipart/form-data">
+      <h3>
+          <input type="text" name="username" placeholder="Nome de usuário" class="email">
+      </h3>
+      <h3>
+          <input type="email" name="email" placeholder="Email" class="email">
+      </h3>
+      <h3>
+          <input type="password" name="password" placeholder="Senha" class="senha">
+      </h3>
+        <button class="btLogin">Registrar</button>
+    </form>
+    @if(errors.length > 0)
+          @each(error in errors)
+            <h4>{{ error }}</h4>
+          @endeach
+      @endif
+  </div>
+ 
+@endsection
+
+
+

@@ -1,0 +1,39 @@
+@layout('layouts.app')
+ 
+@section('content')
+
+
+<div class="criaPost">
+  <h1>Criar Novo Post</h1>
+  <form action="/posts/store" method="POST" encType="multipart/form-data">
+    <h3>
+        <input type="text" name="username" placeholder="Usuário" class="email">
+    </h3>
+    <h3>
+        <input type="text" name="title" placeholder="Titulo" class="email">
+    </h3>
+    <h3>
+           Categoria: <select name="description">
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Games">Games</option>
+                    <option value="Series">Series</option>
+                    <option value="Esportes" >Esportes</option>
+                    <option value="Outros" selected>Outros</option>
+                  </select>
+  </h3>
+  <hr>
+  <h3>
+      <textarea id="txtArtigo" name="content" placeholder="Texto ..." class="texto"></textarea>
+  </h3>
+  <h3>
+     Selecione uma imagem: 
+     <input class="imagesel" type="file" name="image" class="email" id="imagemSel" >
+  </h3>
+      <button class="btLogin" id="btlogin">Criar post</button>
+  </form>
+</div>
+
+<script>
+        CKEDITOR.replace('txtArtigo');
+    </script>
+@endsection

@@ -1,0 +1,23 @@
+@layout('layouts.app')
+ 
+@section('content')
+<div class="container">
+    @if(posts == 0)
+    <h3>Você não possui posts ainda<h3>
+        @endif
+        @each(post in posts)
+        <div class="grid-item">
+            <div class="imagemPost"><a href="/post/{{ post._id }}"><img src="{{post.image}}" alt="" height="100%" width="100%"></a></div>
+            <div class="tituloPost"><a href="/post/{{ post._id }}">{{ post.title }}</a></div>
+            <div class="autorPost">Postado por 
+                <a href="#">{{ post.username }}</a>
+                em {{ post.createdAt.toLocaleString('pt') }}</div>
+            <div class="descPost">{{post.description}}</div>
+            <form action="/posts/{{post._id}}" method="POST" encType="multipart/form-data">
+                <button class="btLogin">Excluir</button>
+            </form>
+        </div>
+        @endeach
+    </div>
+    <hr>
+@endsection

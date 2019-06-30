@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <title>Reddito</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Blog">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="João">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
+    <link href="/css/login.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+    <script src="/ckeditor/ckeditor.js"></script>
+</head>
+ 
+<body>
+ <header class="header">
+      <a href="/" class="logo"><img src="/img/logo.png" alt="" height="40px" width="40px"></a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="menu">
+          <li>
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Categorias</a>
+                <div class="dropdown-content">
+                  <a href="/posts/Tecnologia" name="description">Tecnologia</a>
+                  <a href="/posts/Games" name="description">Games</a>
+                  <a href="/posts/Series" name="description">Series</a>
+                  <a href="/posts/Esportes" name="description">Esportes</a>
+                  <a href="/posts/Outros" name="description">Outros</a>
+                </div>
+              </li>
+            @if(!auth)
+              <li >
+                <a class="nav-link" href="/auth/login">Login</a>
+              </li>
+              <li >
+                <a class="nav-link" href="/auth/register">Registrar</a>
+              </li>
+            @else
+            <li >
+                <a class="nav-link" href="/posts/new">Novo Post</a>
+              </li>
+              <li>
+                <a class="nav-link" href="/auth/mypost">Meus Posts</a>
+              </li>
+              <li>
+                <a class="nav-link" href="/auth/logout">Sair</a>
+              </li>
+            @endif
+      </ul>
+    </header>  
+  @!section('content')
+</body>
+ 
+</html>

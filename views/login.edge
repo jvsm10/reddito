@@ -1,0 +1,17 @@
+@layout('layouts.app')
+ 
+@section('content')
+ 
+<div class="login">
+  <h1>Login</h1>
+  <form action="/users/login" method="POST" encType="multipart/form-data">
+    <h3>
+        <input type="email" name="email" placeholder="Email" class="email">
+    </h3>
+    <h3>
+        <input type="password" name="password" placeholder="Senha" class="senha">
+    </h3>
+      <button class="btLogin">Login</button>
+  </form>
+</div>
+@endsection

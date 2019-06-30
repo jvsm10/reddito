@@ -1,0 +1,28 @@
+@layout('layouts.app')
+ 
+@section('content')
+
+<div class="mainItem"style="background-image: url('{{ post.image }}');">
+  <div class="mainIamge"></div>
+  <div class="itemText">
+    <h1 style="font-size:50px;">{{ post.title }}</span></h1>
+    <h3>Postado por
+      <a href="#" class="userlink">{{ post.username }}</a>
+      em {{ post.createdAt.toLocaleString('pt')}}</h3>
+  </div>
+
+</div>
+      <h4 id="textoc">
+          
+      </h4>
+ <script>
+ var texto = "{{ post.content }}";
+ texto = texto.replace(/&lt;/g,'<');
+ texto = texto.replace(/&gt;/g,'>');
+ texto = texto.replace(/&quot;/g,'"');
+ texto = texto.replace(/&amp;/g,'&');
+ texto = texto.replace(/&nbsp;/g,'/');
+ document.getElementById('textoc').innerHTML = texto;
+ </script>
+    <hr>
+@endsection
